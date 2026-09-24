@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Exam Study - All Practical Programs</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-2: #34d399;
+      --warning: #fbbf24;
+      --border: #374151;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0f172a, #111827 35%, #0b1120);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px 80px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent-2);
+      margin-bottom: 10px;
+      font-size: 2.4rem;
+    }
+
+    .intro {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .toc {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 30px;
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      color: var(--warning);
+    }
+
+    .toc ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .chapter {
+      background: rgba(17, 24, 39, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 18px 18px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .chapter h2 {
+      margin: 0 0 12px;
+      color: var(--accent);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+      font-size: 1.5rem;
+    }
+
+    .chapter h3 {
+      color: var(--warning);
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+
+    .code-box {
+      background: #020817;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      overflow-x: auto;
+    }
+
+    .run-btn {
+      margin-top: 12px;
+      background: linear-gradient(135deg, var(--accent), #2563eb);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 16px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .run-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    pre {
+      margin: 0;
+      color: #d7f7ff;
+      font-size: 0.93rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: Consolas, 'Courier New', monospace;
+    }
+
+    .preview-box {
+      display: none;
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: white;
+      overflow: hidden;
+      min-height: 180px;
+    }
+
+    .preview-box iframe {
+      width: 100%;
+      min-height: 220px;
+      border: none;
+      display: block;
+      background: white;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CS Final Exam Study Pack</h1>
+    <p class="intro">All practical HTML/JavaScript examples combined into one place for quick revision.</p>
+
+    <div class="toc">
+      <h2>Table of contents</h2>
+      <ul>
+        <li><a href="#html-basics">1. HTML basics and lists</a></li>
+        <li><a href="#array-even-odd">2. Array: even/odd</a></li>
+        <li><a href="#operators">3. Operators: sum, product, average</a></li>
+        <li><a href="#tables">4. Multiplication tables</a></li>
+        <li><a href="#square-check">5. Square of positive number</a></li>
+        <li><a href="#string-length">6. String length counter</a></li>
+        <li><a href="#even-odd-check">7. Even/odd check</a></li>
+        <li><a href="#factorial">8. Factorial</a></li>
+        <li><a href="#largest-number">9. Largest number</a></li>
+        <li><a href="#sum-array">10. Sum of array</a></li>
+        <li><a href="#sum-squares">11. Sum of squares</a></li>
+        <li><a href="#exam-practice">12. Extra exam practice</a></li>
+      </ul>
+    </div>
+
+    <section id="html-basics" class="chapter">
+      <h2>1. HTML basics and lists</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;PRACTICALS&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1 style="color:olive;font-size:67px;"&gt;This is heading 1 with olive color and 6....7... font size i guess&lt;/h1&gt;
+&lt;h2&gt;This is heading 2&lt;/h2&gt;
+&lt;h3&gt;This is heading 3&lt;/h3&gt;
+&lt;h4&gt;This is heading 4&lt;/h4&gt;
+&lt;h5&gt;This is heading 5&lt;/h5&gt;
+&lt;h6&gt;This is heading 6&lt;/h6&gt;
+&lt;hr&gt;
+&lt;h1&gt;TAG THE TEXT + LISTS &lt;/h1&gt;
+
+&lt;p&gt;This &lt;b&gt; text is bold &lt;/b&gt;, this &lt;strong&gt; text is strong &lt;/strong&gt;. There is no difference. This &lt;u&gt; text is underlined &lt;/u&gt;, this &lt;em&gt;text is emphasized &lt;/em&gt;, &lt;i&gt;this is italic&lt;/i&gt; no difference. We use superscript with sup tag, e.g &lt;i&gt;8&lt;sup&gt;2&lt;/sup&gt;=64&lt;/i&gt;. We use subscript with sub tag, e.g &lt;i&gt;H&lt;sup&gt;2&lt;/sup&gt;&lt;/i&gt;O&lt;/p&gt;
+
+&lt;p&gt;Here is&lt;small&gt; Small text&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;h3&gt;&lt;u&gt;**There are three types of list**&lt;/u&gt;&lt;/h3&gt;
+
+&lt;h2&gt;&lt;i&gt;This is definition list&lt;/i&gt;&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;Hyper text markup labuage(HTML)&lt;/dt&gt;
+&lt;dd&gt;
+Purpose: It is the backbone of web pages.
+&lt;br&gt;
+Role: Defines the structure and content of a webpage (headings, paragraphs, images, links, forms, etc.).
+&lt;br&gt;
+Example: Decides what appears on the page.&lt;/dd&gt;
+
+&lt;dt&gt;CSS (Cascading Style Sheets)&lt;/dt&gt;
+&lt;dd&gt;Purpose: It is used for styling and layout.
+&lt;br&gt;
+Role: Controls the look of a webpage—colors, fonts, spacing, animations, responsive design, etc.
+&lt;br&gt;
+Example: Decides how the content looks.&lt;/dd&gt;
+
+&lt;dt&gt;JavaScript (JS)&lt;/dt&gt;
+&lt;dd&gt;Purpose: It is the programming language of the web.
+&lt;br&gt;
+Role: Adds interactivity and functionality to websites (form validation, sliders, popups, dynamic content, games, etc.).
+&lt;br&gt;
+Example: Decides how the page behaves when users interact with it.&lt;/dd&gt;
+
+&lt;/dl&gt;
+&lt;hr&gt;
+&lt;h2&gt;Ordered list&lt;/h2&gt;
+&lt;h3&gt;My hobbies&lt;/h3&gt;
+
+&lt;ol type="I"&gt;
+ &lt;li&gt;Football&lt;/li&gt;
+ &lt;li&gt;Programming&lt;/li&gt;
+ &lt;li&gt;Gaming&lt;/li&gt;
+ &lt;li&gt;Learning new and unique tricks(any)&lt;/li&gt;
+ &lt;li&gt;Exploring MATH'S &lt;/li&gt;
+ &lt;li&gt;Solving puzzles&lt;/li&gt;
+ &lt;li&gt;Gaining knowledge about science&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;Unordered list&lt;/h2&gt;
+
+&lt;h3&gt;My hobbies&lt;/h3&gt;
+
+&lt;ul style="list-style-type: circle;"&gt;
+ &lt;li&gt;Football&lt;/li&gt;
+ &lt;li&gt;Programming&lt;/li&gt;
+ &lt;li&gt;Gaming&lt;/li&gt;
+ &lt;li&gt;Learning new and unique tricks(any)&lt;/li&gt;
+ &lt;li&gt;Exploring MATH'S &lt;/li&gt;
+ &lt;li&gt;Solving puzzles&lt;/li&gt;
+ &lt;li&gt;Gaining knowledge about science&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;table&gt;
+
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;Chemistry&lt;/th&gt;
+&lt;th&gt;Physics&lt;/th&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Name 1&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Name 2&lt;/td&gt;
+&lt;td&gt;13.5&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;hr&gt;
+
+&lt;a href="https://muhammad4bdullah.github.io/Portfolio/" target="_blank"&gt;My website guyss&lt;/a&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+I hope you liked it.... :)
+
+&lt;style&gt;
+th,td,table{
+border:1px solid black;
+}
+
+&lt;/style&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="array-even-odd" class="chapter">
+      <h2>2. Array: even/odd</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script&gt;
+
+let i;
+let a = Number(prompt("Enter size of array"));
+let arr = [a];
+
+for (i=0;i&lt;a;i=i+1){
+
+arr[i]= Number(prompt("Enter element: ", i))
+}
+
+for (i=0;i&lt;a;i=i+1){
+
+ if(arr[i] % 2 === 0){
+document.write(arr[i]+ ": EVEN &lt;br&gt;");
+}
+else{
+document.write(arr[i]+ ": ODD &lt;br&gt;")
+}
+
+ }
+
+&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="operators" class="chapter">
+      <h2>3. Operators: sum, product, average</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;operators&lt;/title&gt;
+
+&lt;script type="text/javascript"&gt;
+let n1=Number(prompt("Enter number 1"));
+let n2=Number(prompt("Enter number 2"));
+let n3=Number(prompt("Enter number 3"));
+
+function sum(){
+let sum= n1+n2+n3;
+alert("sum is:" + sum);
+}
+
+function product(){
+let product= n1*n2*n3;
+alert("product is:" + product);
+}
+
+function avg(){
+let avg= (n1+n2+n3)/3;
+alert("avg is:" + avg);
+}
+
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;input type="button" onclick="sum()" value="Sum"&gt;
+&lt;input type="button" onclick="product()" value="Product"&gt;
+&lt;input type="button" onclick="avg()" value="Average"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="tables" class="chapter">
+      <h2>4. Multiplication tables</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+let i, j; 
+document.write("Tables")
+document.write("&lt;br&gt;")
+document.write("&lt;br&gt;")
+for(i=1;i&lt;=100;i=i+1){
+
+
+
+document.write("Table of ", i)
+document.write("&lt;br&gt;")
+
+   for(j=1;j&lt;=100;j=j+1){
+   document.write(i,"x", j,"=", i*j,",  ")
+   document.write("&lt;br&gt;")
+}
+document.write("&lt;br&gt;")
+document.write("&lt;br&gt;")
+}
+document.write("&lt;br&gt;")
+document.write("&lt;br&gt;")
+
+
+
+document.write("In columns and rows")
+document.write("&lt;br&gt;")
+document.write("&lt;br&gt;")
+for(i=1;i&lt;=5;i=i+1){
+   for(j=1;j&lt;=10;j=j+1){
+   document.write(i*j,", ")
+}
+document.write("&lt;br&gt;")
+}
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="square-check" class="chapter">
+      <h2>5. Square of a positive number</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Title&lt;/title&gt;
+&lt;script type="text/javascript"&gt;
+function square() {
+  let n = Number(prompt("Enter your number:"));
+  if (n &gt; 0) {
+    let n2 = n * n;
+    alert("The square of the positive number is: " + n2);
+  } else {
+    alert("Your number is negative");
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type="button" onclick="square()" value="Square"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="string-length" class="chapter">
+      <h2>6. String length counter</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+let i, j; 
+i = prompt("Enter your text");
+j = i.length;
+document.write("THE number of characters is"+ j);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="even-odd-check" class="chapter">
+      <h2>7. Even / odd check</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let no1;
+no1 = Number(prompt("Enter your number"));
+
+if (no1 % 2 === 0){
+alert(no1 + " is the even")
+}
+else {
+alert(no1 +" is the odd")
+}
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <h3>Variation</h3>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let a;
+a = Number(prompt("enter a number"));
+ 
+if (a % 2 ===  0){
+alert("ur number: " + a + " is even i guess")
+}
+else{
+alert("maybe odd")
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="factorial" class="chapter">
+      <h2>8. Factorial</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let a, i, fact = 1;
+a= Number(prompt("Enter the number you want factorial of"));
+for(i=a;i&gt;=1;i=i-1){
+fact = fact * i;
+
+}
+
+document.write("factorial of"+ a +"is"+ fact)
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <h3>Another version</h3>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let n;
+let fact=1;
+let i;
+
+n = Number(prompt("Enter a number you want factorial of"));
+for (i=n;i&gt;=1;i=i-1){
+   fact=fact*i;
+}
+
+document.write("Factorial of " + n + " is " + fact);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="largest-number" class="chapter">
+      <h2>9. Largest number</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let no1, no2, no3;
+no1 = Number(prompt("Enter your 1st number"));
+no2 = Number(prompt("Enter your 2nd number"));
+no3 = Number(prompt("Enter your 3rd number"));
+
+if (no1&gt;no2 && no1&gt;no3){
+alert(no1 + " is the largest")
+}
+else if(no2&gt;no1 && no2&gt;no3){
+alert(no2 +" is the largest")
+}
+else{
+alert(no3 +" is largest")
+}
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <h3>Another version</h3>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+let a,b,c;
+a=Number(prompt("enter number 1"))
+b=Number(prompt("enter number 2"))
+c=Number(prompt("enter number 3"))
+
+if (a&gt;=b&amp;&amp;a&gt;=c){
+alert("First number: "+a+" is largest")
+}
+
+if (b&gt;=a&amp;&amp;b&gt;=c){
+alert("Second number: "+b+" is largest")
+}
+
+if (c&gt;=b&amp;&amp;c&gt;=a){
+alert("Third number: "+c+" is largest")
+}
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="sum-array" class="chapter">
+      <h2>10. Sum of array</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let i, sum = 0;
+let arr = [10];
+for(i=1;i&lt;=10;i=i+1){
+arr[i]= Number(prompt("Enter number" + i))
+sum = sum + arr[i];
+}
+
+document.write("the sum is "+ sum)
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <h3>Another version</h3>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let i, sum=0;
+let arr=[];
+
+for(i=1;i&lt;=10;i=i+1){
+
+arr[i]=Number(prompt("Enter your: "+ i+ " number"));
+sum=sum+arr[i];
+document.write("the "+(i-1)+ " index of array is "+arr[i] +"&lt;br&gt;")
+}
+
+document.write("&lt;br&gt;&lt;hr&gt;&lt;hr&gt;Sum of array is "+ sum);
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="sum-squares" class="chapter">
+      <h2>11. Sum of squares</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let i, sum=0;
+
+for(i=1;i&lt;=10;i=i+1){
+sum=sum+(i*i)
+document.write(i, "&lt;sup&gt;2&lt;/sup&gt;=", i*i, "&lt;br&gt;")
+}
+
+
+document.write(sum);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <h3>Another version</h3>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+let i, sum=0;
+
+for(i=0;i&lt;=10;i=i+1){
+ sum= sum + (i*i)
+}
+
+document.write("The sum of squares from 1-10 is : ", sum)
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section id="exam-practice" class="chapter">
+      <h2>12. Extra exam practice</h2>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let arr= [10];
+let i, sum=0;
+for(i=1;i&lt;=10;i=i+1){
+  arr[i]= Number(prompt("Ënter the number for array: ", i));
+ 
+  sum= sum + arr[i];
+
+}
+avg = sum/arr.length;
+
+document.write("Average of numbers "+ arr + " is "+ avg)
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+a = Number(prompt("Enter the number"));
+
+if(a % 2 == 0){
+document.write(a, " is even");
+
+}
+else{
+document.write(a, " is odd");
+}
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let n;
+let fact=1;
+let i;
+
+n = Number(prompt("Enter a number you want factorial of"));
+for (i=n;i&gt;=1;i=i-1){
+   fact=fact*i;
+}
+
+document.write("Factorial of " + n + " is " + fact);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let i,a,sum=0;
+
+a=Number(prompt("Enter the the total numbers u want sum the squares of. e.g. 1-?"));
+
+for(i=a;i&gt;=1;i=i-1){
+sum+=(i*i);
+
+}
+alert("SUm of squares from 1-"+a+" is: "+sum);
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <div class="code-box">
+<pre>&lt;html&gt;
+&lt;body&gt;
+&lt;script type="text/javascript"&gt;
+
+let a,b,c;
+a=Number(prompt("Enter first number"))
+b=Number(prompt("Enter second number"))
+c=Number(prompt("Enter third number"))
+
+if(a&gt;b &amp;&amp; a&gt;c){
+document.write(a," is the largest among three provided")
+}
+else if(b&gt;a &amp;&amp; b&gt;c){
+document.write(b," is the largest among three provided")
+}
+else{
+document.write(c," is the laregst among three provided")
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.querySelectorAll('.code-box').forEach(function (box) {
+      const pre = box.querySelector('pre');
+      if (!pre) return;
+
+      const code = pre.textContent;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'run-btn';
+      button.textContent = 'Run code';
+
+      const preview = document.createElement('div');
+      preview.className = 'preview-box';
+
+      button.addEventListener('click', function () {
+        const iframe = document.createElement('iframe');
+        iframe.title = 'Code preview';
+
+        iframe.srcdoc = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      margin: 0;
+      padding: 18px;
+      background: #ffffff;
+      color: #111827;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+    * { box-sizing: border-box; }
+  </style>
+</head>
+<body>
+${code}
+</body>
+</html>`;
+
+        preview.innerHTML = '';
+        preview.appendChild(iframe);
+        preview.style.display = 'block';
+      });
+
+      box.appendChild(button);
+      box.appendChild(preview);
+    });
+  </script>
+</body>
+</html>
